@@ -17,7 +17,10 @@ gulp.task('test', async () => {
 
   gulp
     .src('tests')
-    .pipe(jest());
+    .pipe(jest({
+      'collectCoverage': true,
+      'coverageReporters': ['text']
+    }));
 });
 
 gulp.task('default', gulp.series('compile', 'test'));
