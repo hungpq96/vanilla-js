@@ -1,5 +1,5 @@
 {
-  "file": ["src/main.ts"],
+  "file": ["src/index.ts"],
   "compilerOptions": {
     "noImplicitAny": true,
     "target": "es5"
