@@ -5,5 +5,8 @@
   "main": "index.js",
   "author": "hwng",
   "license": "MIT",
-  "private": true
+  "private": true,
+  "devDependencies": {
+    "gulp": "^4.0.2"
+  }
 }
