@@ -1,0 +1,9 @@
+{
+  "name": "vanilla-js",
+  "version": "1.0.0",
+  "description": "Sets of small problems implemented in TypeScript, NodeJS",
+  "main": "index.js",
+  "author": "hwng",
+  "license": "MIT",
+  "private": true
+}
