@@ -2,6 +2,7 @@
   "file": ["src/index.ts"],
   "compilerOptions": {
     "noImplicitAny": true,
-    "target": "es5"
+    "target": "es5",
+    "lib": ["es6", "dom"]
   }
 }

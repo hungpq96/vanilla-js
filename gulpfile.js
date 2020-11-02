@@ -1,5 +1,6 @@
 const gulp = require('gulp');
 const ts = require('gulp-typescript');
+const jest = require('gulp-jest').default;
 
 const project = ts.createProject('tsconfig.json');
 
@@ -8,11 +9,15 @@ gulp.task('compile', async () => {
     .src()
     .pipe(project())
     .js
-    .pipe(gulp.dest('dist'))
+    .pipe(gulp.dest('dist'));
 });
 
 gulp.task('test', async () => {
-  console.log('should run jest');
-})
+  process.env.NODE_ENV = 'jest';
+
+  gulp
+    .src('tests')
+    .pipe(jest());
+});
 
 gulp.task('default', gulp.series('compile', 'test'));
