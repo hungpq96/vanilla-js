@@ -51,12 +51,15 @@ var LinkedList = /** @class */ (function () {
         }
         return deletedNode ? deletedNode.value : null;
     };
-    LinkedList.prototype.find = function (value) {
+    LinkedList.prototype.find = function (value, callback) {
         if (!this.head) {
             return null;
         }
         var currentNode = this.head;
         while (currentNode) {
+            if (callback && callback(currentNode.value)) {
+                return currentNode;
+            }
             if (Array.isArray(value)
                 && JSON.stringify(currentNode.value) === JSON.stringify(value)) {
                 return currentNode;

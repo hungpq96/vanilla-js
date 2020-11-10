@@ -66,13 +66,17 @@ export default class LinkedList {
     return deletedNode ? deletedNode.value : null;
   }
 
-  find(value: any): Node {
+  find(value: any, callback: Function): Node {
     if (!this.head) {
       return null;
     }
 
     let currentNode: Node = this.head;
     while (currentNode) {
+      if (callback && callback(currentNode.value)) {
+        return currentNode;
+      }
+
       if (Array.isArray(value)
         && JSON.stringify(currentNode.value) === JSON.stringify(value)) {
           return currentNode;

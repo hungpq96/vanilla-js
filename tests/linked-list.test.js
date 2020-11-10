@@ -175,6 +175,13 @@ describe('LinkedList', () => {
       expect(list.toArray()).toEqual(['foo', 'bar']);
       expect(deletedItem).toEqual('buzz');
     });
+
+    test('should return null if list is empty', () => {
+      const list = createList();
+      const deletedItem = list.delete('foo');
+
+      expect(deletedItem).toEqual(null);
+    });
   });
 
   describe('.find', () => {
