@@ -1,6 +1,6 @@
 import LinkedList from '../linked-list';
 
-export default class Stack {
+export default class Queue {
   list: LinkedList;
 
   constructor() {
@@ -15,12 +15,12 @@ export default class Stack {
     return this.isEmpty() ? null : this.list.head.value;
   }
 
-  push(value: any): void {
+  enqueue(value: any): void {
     this.list.prepend(value);
   }
 
-  pop(): any {
-    return this.list.deleteHead();
+  dequeue(): any {
+    return this.list.deleteTail();
   }
 
   toArray(): Array<any> {

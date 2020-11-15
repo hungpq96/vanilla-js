@@ -1,25 +1,25 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 var linked_list_1 = require("../linked-list");
-var Stack = /** @class */ (function () {
-    function Stack() {
+var Queue = /** @class */ (function () {
+    function Queue() {
         this.list = new linked_list_1.default();
     }
-    Stack.prototype.isEmpty = function () {
+    Queue.prototype.isEmpty = function () {
         return !this.list.head;
     };
-    Stack.prototype.peek = function () {
+    Queue.prototype.peek = function () {
         return this.isEmpty() ? null : this.list.head.value;
     };
-    Stack.prototype.push = function (value) {
+    Queue.prototype.enqueue = function (value) {
         this.list.prepend(value);
     };
-    Stack.prototype.pop = function () {
-        return this.list.deleteHead();
+    Queue.prototype.dequeue = function () {
+        return this.list.deleteTail();
     };
-    Stack.prototype.toArray = function () {
+    Queue.prototype.toArray = function () {
         return this.list.toArray();
     };
-    return Stack;
+    return Queue;
 }());
-exports.default = Stack;
+exports.default = Queue;
